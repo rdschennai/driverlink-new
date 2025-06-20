@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DriverLink - Booking Share</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Custom scrollbar for webkit browsers - Light Theme */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f1f5f9; /* Light gray track */
+      border-radius: 10px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #cbd5e1; /* Muted thumb for light theme */
+      border-radius: 10px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8; /* Darker on hover */
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+     /* Ensure focus rings are visible on light backgrounds */
+    *:focus-visible {
+        outline: 2px solid #0ea5e9 !important; /* Sky blue focus ring (Tailwind sky-500) */
+        outline-offset: 2px;
+    }
+    /*
+      SOUND NOTIFICATION SETUP:
+      1. Create an 'assets' folder in your project's public directory (or root, next to this index.html).
+      2. Place your notification sound file (e.g., MP3) into this 'assets' folder.
+      3. Name the file 'notification-tone.mp3'.
+      The audio element below will attempt to load '/assets/notification-tone.mp3'.
+    */
+    /* Optional: For better Tamil font rendering, consider adding a specific Tamil font.
+       Example using Google Fonts (add to <head>):
+       <link rel="preconnect" href="https://fonts.googleapis.com">
+       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+       <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+Tamil:wght@400;500;700&display=swap" rel="stylesheet">
+       And then update the body font-family:
+       body { font-family: 'Inter', 'Noto Sans Tamil', sans-serif; }
+    */
+  </style>
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.1.0/",
+    "react": "https://esm.sh/react@^19.1.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.5.1"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="bg-gray-100 text-gray-800">
+  <div id="root"></div>
+  <audio id="notificationSound" src="/assets/notification-tone.mp3" preload="auto"></audio>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
